@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hobbies</title>
+    <link rel="stylesheet" type="text/css" href="styles.css"> 
+    <style>
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #FFFAF0;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px; /* Set a maximum width */
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #FFFAF0;
+        }
+
+        h2 {
+            font-family: 'Baskerville', serif;
+            text-align: center;
+            margin-bottom: 20px;
+            margin-top: 5px;
+            font-size: 65px;
+            color: #800000;
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+            padding: 10px;
+            background-color: #800000;
+            border-radius: 5px;
+        }
+
+        .navbar a {
+            padding: 10px 15px;
+            margin: 5px;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .navbar a:hover {
+            background-color: #a1887f;
+            transform: translateY(-2px);
+        }
+
+        /* Grid Layout for Hobby Section */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        /* Individual Grid Item Styles */
+        .grid-item {
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #FFFAF0;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .grid-item h3 {
+            margin-top: 0;
+            font-size: 27px;
+            color: #990000;
+        }
+
+        .grid-item p {
+            font-size: 15px;
+            line-height: 1.6;
+            color: #000;
+        }
+
+        /* Standardize Image Sizes */
+        .grid-item img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin-bottom: 20px; 
+            border-radius: 10px; 
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>My Hobbies</h2>
+
+    <!-- Navigation Bar -->
+        <nav class="navbar">
+            <a href="index.html">Home</a>
+            <a href="Page_1.html">Profile</a>
+            <a href="Photo_Gallery.html">Gallery</a>
+            <a href="Page_2.html">Education</a>
+            <a href="Page_3.html">Hobby</a>
+            <a href="bmi.html">BMI</a>
+        </nav>
+    
+    <!-- Hobby Section -->
+    <section id="hobby" class="grid-container">
+        <div class="grid-item">
+            <h3>Photography</h3>
+            <img src="image/hobby2.jpg" alt="Hobby Image">
+            <div class="personal-details">
+                <p><strong>Experience Level:</strong> </p>
+                <p>Intermediate</p>
+                <p><strong>Equipment:</strong></p>
+				<ul>
+					<li>Olympus [mju:] II ZOOM VF</li>
+					<li>Fujifilm InstaX Mini LiPlay</li>
+				</ul>
+                <p><strong>Inspiration:</strong></p>
+                <p>Annie Leibovitz</p>
+                <p><strong>Favorite Quote:</strong> </p>
+                <p>"You don't take a photograph, you make it."</p>
+            </div>
+        </div>
+        
+        <div class="grid-item">
+            <h3>Cooking/ Baking</h3>
+            <img src="image/hobby1.jpg" alt="Hobby Image">
+            <div class="personal-details">
+                <p><strong>Experience Level:</strong> </p>
+                <p>Intermediate</p>
+                <p><strong>Such:</strong></p>
+				<ul>
+					<li> Mac & Cheese</li>
+					<li> Blueberry Pie</li>
+					<li> Nasi Ayam</li>
+					<li> Dendeng </li>
+				</ul>
+                <p><strong>Inspiration:</strong></p>
+                <p>Opah</p>
+                <p><strong>Favorite Quote:</strong> </p>
+                <p>"No one is born a great baker, It's called trial and error."</p>
+            </div>
+        </div>
+        
+        <div class="grid-item">
+            <h3>Reading</h3>
+            <img src="image/hobby3.jpg" alt="Hobby Image">
+            <div class="personal-details">
+                <p><strong>Experience Level:</strong> </p>
+                <p>Beginner</p>
+                <p><strong>Favourite Genre:</strong></p>
+                <p>Self- motivation book</p>
+                <p><strong>Inspiration:</strong></p>
+                <p>Hasidawati</p>
+                <p><strong>Favorite Quote:</strong> </p>
+                <p>"She read books as one would breathe air, to fill up and live."</p>
+            </div>
+        </div>
+        
+        <div class="grid-item">
+            <h3>Hiking/ Morning Walk</h3>
+            <img src="image/hobby4.jpg" alt="Hobby Image">
+            <div class="personal-details">
+                <p><strong>Experience Level:</strong> </p>
+                <p>Intermediate</p>
+                <p><strong>Where:</strong></p>
+				<ul>
+					<li> Gunung Semanggol, Perak</li>
+					<li>Bukit Broga, Selangor</li>
+				</ul>
+                <p><strong>Inspiration:</strong></p>
+                <p>Yusuff</p>
+                <p><strong>Favorite Quote:</strong> </p>
+                <p>"When you feel like stopping, think about why you started."</p>
+            </div>
+        </div>
+    </section>
+</div>
+
+</body>
+</html>

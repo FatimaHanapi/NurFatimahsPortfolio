@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" type="text/css" href="styles.css"> 
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #FFFAF0;
+            color: #333;
+        }
+
+        .container {
+            max-width: 100%;
+            margin: 0;
+            padding: 20px;
+            background-color: #FFFAF0;
+        }
+
+        h2 {
+            font-family: 'Baskerville', serif;
+            text-align: center;
+            margin-bottom: 20px;
+            margin-top: 5px;
+            font-size: 65px;
+            color: #800000;
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+            padding: 10px;
+            background-color: #800000;
+            border-radius: 5px;
+        }
+
+        .navbar a {
+            padding: 10px 15px;
+            margin: 5px;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .navbar a:hover {
+            background-color: #a1887f;
+            transform: translateY(-2px);
+        }
+
+        /* Sections */
+        section {
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #FFFAF0;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        section h3 {
+            margin-left: 80px;
+            margin-top: 0;
+            margin-bottom: 0px;
+            font-size: 27px;
+            color: #990000;
+        }
+
+        img {
+            max-width: 40%;
+            height: auto;
+            display: block;
+            margin: 20px auto 60px; /* Adds 30px margin bottom */
+            overflow: hidden;
+            border-radius: 20%;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Smooth transitions */
+        }
+
+        /* Hover effect for the image */
+        img:hover {
+            transform: scale(1.1); /* Scale the image to 110% */
+            box-shadow: 0 30px 40px rgba(0, 0, 0, 0.5); /* Add shadow */
+        }
+
+        /* Add styles for personal details */
+        .personal-details {
+            text-align: center; /* Center-align the text */
+            font-size: 18px;
+            color: #333;
+        }
+
+        .personal-details p {
+            margin: 5px 0;
+            margin-bottom: 20px;
+            text-align: center; 
+        }
+
+        .personal-details h3 {
+            margin-bottom: 40px;
+            margin-top: 40px; 
+            font-size: 20px; 
+            color: #800000; 
+            font-style: italic; 
+            text-align: center; 
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>My Profile</h2>
+
+    <!-- Navigation Bar -->
+        <nav class="navbar">
+            <a href="index.html">Home</a>
+            <a href="Page_1.html">Profile</a>
+            <a href="Photo_Gallery.html">Gallery</a>
+            <a href="Page_2.html">Education</a>
+            <a href="Page_3.html">Hobby</a>
+            <a href="bmi.html">BMI</a>
+        </nav>
+    
+    <!-- Profile Section -->
+    <section id="profile">
+        <div class="image-with-text">
+            <img src="image/profile2.jpg" alt="Fatimah's Profile">
+            <div class="personal-details">
+                <p><strong>Name:</strong></p> 
+                <p>Nur Fatimah Binti Mohamad Hanapi</p>
+                <p><strong>Age:</strong> </p>
+                <p> 21</p>
+                <p><strong>Birth Date:</strong> </p>
+                <p>23 January 2003</p>
+                <p><strong>Address:</strong></p>
+                <p>Bandar Tasik Kesuma, Beranang, Selangor</p>
+                <p><strong>Phone Number:</strong> </p>
+                <p>(+06) 11-1165 1098</p>
+                <p><strong>Email:</strong></p>
+                <p>ftimhnpi@gmail.com</p>
+                <h3><strong>--SELF-CARE IS GIVING THE WORLD WHAT'S BEST OF YOU, INSTEAD OF WHAT'S LEFT OF YOU--</strong></h3>
+            </div>
+        </div>
+    </section>
+</div>
+
+</body>
+</html>

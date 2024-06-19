@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BMI Checker</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #FFFAF0;
+            color: #333;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #FFFAF0;
+        }
+
+        h2 {
+            font-family: 'Baskerville', serif;
+            text-align: center;
+            margin-bottom: 20px;
+            margin-top: 5px;
+            font-size: 65px;
+            color: #800000;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+            padding: 10px;
+            background-color: #800000;
+            border-radius: 5px;
+        }
+
+        .navbar a {
+            padding: 10px 15px;
+            margin: 5px;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .navbar a:hover {
+            background-color: #a1887f;
+            transform: translateY(-2px);
+        }
+
+        .wrapper {
+            max-width: 600px;
+            background: #FFFAF0; /* Match the body background color */
+            padding: 30px;
+            border-radius: 10px;
+            margin: 0 auto;
+            border: 1px solid maroon;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        form .section1 input,
+        .section2 input {
+            width: 80%;
+            border: 1px solid maroon;
+            border-radius: 5px;
+            font-size: 15px;
+            padding: 7px;
+            margin-bottom: 20px;
+            color: rgba(102, 102, 102, 0.904);
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        form .submit input {
+            font-size: 18px;
+            color: maroon;
+            background: white;
+            border: 1px solid maroon;
+            border-radius: 5px;
+            padding: 8px 15px;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            cursor: pointer;
+        }
+
+        form .submit input:hover {
+            background: maroon;
+            color: white;
+        }
+
+        .error-message {
+            color: #ed4337;
+            font-size: 17px;
+            display: block;
+            margin-top: 5px;
+            text-align: center;
+        }
+
+        .submit {
+            display: flex;
+            justify-content: center;
+        }
+
+        .submit input {
+            margin: 0 5px;
+        }
+
+        .section1, .section2 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 5px;
+        }
+
+        .section1 span, .section2 span {
+            text-align: center;
+            margin-bottom: 5px;
+        }
+
+        .result {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        ul {
+            text-align: center;
+        }
+
+        ul li {
+            display: inline-block;
+            margin: 0 35px;
+        }
+
+        .line {
+            border-top: 2px solid maroon;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>My BMI</h2>
+
+    <nav class="navbar">
+        <a href="index.html">Home</a>
+        <a href="Page_1.html">Profile</a>
+        <a href="Photo_Gallery.html">Gallery</a>
+        <a href="Page_2.html">Education</a>
+        <a href="Page_3.html">Hobby</a>
+        <a href="bmi.html">BMI</a>
+    </nav>
+
+    <div class="wrapper">
+        <form id="bmiForm">
+            <div class="section1">
+                <span>Height (cm): </span>
+                <input type="text" id="height" autocomplete="off" placeholder="cm">
+                <span class="error-message" id="heightError"></span>
+            </div> 
+            <div class="section2">
+                <span>Weight (kg): </span>
+                <input type="text" id="weight" autocomplete="off" placeholder="kg">
+                <span class="error-message" id="weightError"></span>
+            </div> 
+            <div class="submit">
+                <input type="button" value="Check BMI" onclick="calculateBMI()">
+                <input type="reset" value="Clear">
+            </div> 
+        </form>
+        <div class="result" id="result"></div>
+    </div>
+</div> 
+
+<script>
+    function calculateBMI() {
+        var height = document.getElementById('height').value;
+        var weight = document.getElementById('weight').value;
+        var heightError = document.getElementById('heightError');
+        var weightError = document.getElementById('weightError');
+        var result = document.getElementById('result');
+
+        heightError.textContent = '';
+        weightError.textContent = '';
+        result.innerHTML = '';
+
+        if (height === '') {
+            heightError.textContent = 'Height is required';
+            return;
+        }
+
+        if (weight === '') {
+            weightError.textContent = 'Weight is required';
+            return;
+        }
+
+        height = parseFloat(height);
+        weight = parseFloat(weight);
+
+        if (isNaN(height) || height <= 0) {
+            heightError.textContent = 'Please enter a valid height';
+            return;
+        }
+
+        if (isNaN(weight) || weight <= 0) {
+            weightError.textContent = 'Please enter a valid weight';
+            return;
+        }
+
+        var height_m = height / 100;
+        var bmi = weight / (height_m * height_m);
+        var bmiCategory = '';
+
+        if (bmi < 18.5) {
+            bmiCategory = 'You are underweight.';
+        } else if (bmi >= 18.5 && bmi < 24.9) {
+            bmiCategory = 'Your weight is normal.';
+        } else if (bmi >= 25 && bmi < 29.9) {
+            bmiCategory = 'You are overweight.';
+        } else {
+            bmiCategory = 'You are obese.';
+        }
+
+        result.innerHTML = `
+            <h3>Result:</h3>
+            <p>Your BMI is: ${bmi.toFixed(2)}</p>
+            <p>${bmiCategory}</p>
+        `;
+    }
+</script>
+
+</body>
+</html>
